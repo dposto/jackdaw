@@ -1,0 +1,55 @@
+{
+    "app-id": "io.github.dposto.Jackdaw",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.8",
+    "sdk": "org.kde.Sdk",
+    "base": "com.riverbankcomputing.PyQt.BaseApp",
+    "base-version": "6.8",
+    "command": "jackdaw",
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--filesystem=home"
+    ],
+    "cleanup-commands": [
+        "/app/cleanup-BaseApp.sh"
+    ],
+    "modules": [
+        {
+            "name": "pyenchant",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --no-index --find-links=. --prefix=/app --no-build-isolation pyenchant"
+            ],
+            "sources": [
+                {
+                    "type": "pypi",
+                    "name": "pyenchant",
+                    "version": "3.2.2"
+                }
+            ]
+        },
+        {
+            "name": "jackdaw",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm755 jackdaw.py /app/bin/jackdaw",
+                "install -Dm644 jackdaw.png /app/share/icons/hicolor/512x512/apps/io.github.dposto.Jackdaw.png",
+                "install -Dm644 icons/jackdaw-256.png /app/share/icons/hicolor/256x256/apps/io.github.dposto.Jackdaw.png",
+                "install -Dm644 icons/jackdaw-128.png /app/share/icons/hicolor/128x128/apps/io.github.dposto.Jackdaw.png",
+                "install -Dm644 io.github.dposto.Jackdaw.desktop /app/share/applications/io.github.dposto.Jackdaw.desktop",
+                "install -Dm644 io.github.dposto.Jackdaw.metainfo.xml /app/share/metainfo/io.github.dposto.Jackdaw.metainfo.xml"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/dposto/jackdaw.git",
+                    "tag": "v1.0.0"
+                }
+            ]
+        }
+    ]
+}

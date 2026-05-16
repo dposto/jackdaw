@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.dposto.Jackdaw</id>
+  <name>Jackdaw</name>
+  <summary>Lightweight HTML editor with live preview</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.dposto">
+    <name>David Posto</name>
+  </developer>
+
+  <description>
+    <p>
+      Jackdaw is a lightweight, open-source HTML editor with a live split
+      preview pane. It features syntax highlighting with color swatches,
+      HTML tag validation, spell check, a snippet system with mirrored
+      tabstops, and dark/light themes.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Live split preview with scroll and click sync</li>
+      <li>HTML syntax highlighting with inline color swatches</li>
+      <li>HTML tag validation with clickable error panel and gutter markers</li>
+      <li>Spell check with personal dictionary (right-click suggestions)</li>
+      <li>Snippet system with tabstop expansion and mirrored stops</li>
+      <li>Firefox-style Find and Find &amp; Replace bar</li>
+      <li>Multi-tab editing with session restore and crash recovery</li>
+      <li>Rich copy — paste into Google Docs with syntax colors</li>
+      <li>Tab/Shift+Tab indentation with VS Code-style indent guides</li>
+      <li>Tag completion: Manual, Smart, and Auto modes</li>
+      <li>Dark and light themes</li>
+    </ul>
+  </description>
+
+  <url type="homepage">https://github.com/dposto/jackdaw</url>
+  <url type="bugtracker">https://github.com/dposto/jackdaw/issues</url>
+  <url type="vcs-browser">https://github.com/dposto/jackdaw</url>
+
+  <launchable type="desktop-id">io.github.dposto.Jackdaw.desktop</launchable>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#ffffff</color>
+    <color type="primary" scheme_preference="dark">#1e1e1e</color>
+  </branding>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="1.0.0" date="2026-05-16">
+      <description>
+        <p>Initial release.</p>
+      </description>
+    </release>
+  </releases>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <categories>
+    <category>Development</category>
+    <category>TextEditor</category>
+  </categories>
+</component>
