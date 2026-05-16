@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Jackdaw
+Comment=Lightweight HTML editor with live preview
+Exec=jackdaw
+Icon=io.github.dposto.Jackdaw
+Terminal=false
+Type=Application
+Categories=Development;TextEditor;WebDevelopment;
+Keywords=HTML;editor;code;web;preview;
+MimeType=text/html;
+StartupWMClass=jackdaw
