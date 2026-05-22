@@ -12,23 +12,35 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
-        "--filesystem=home"
+        "--filesystem=home",
+        "--env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess"
     ],
     "cleanup-commands": [
         "/app/cleanup-BaseApp.sh"
     ],
     "modules": [
         {
+            "name": "enchant",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/AbiWord/enchant/releases/download/v2.8.2/enchant-2.8.2.tar.gz",
+                    "sha256": "8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375"
+                }
+            ]
+        },
+        {
             "name": "pyenchant",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --no-index --find-links=. --prefix=/app --no-build-isolation pyenchant"
+                "pip3 install --no-index --prefix=/app --no-build-isolation ."
             ],
             "sources": [
                 {
-                    "type": "pypi",
-                    "name": "pyenchant",
-                    "version": "3.2.2"
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/source/p/pyenchant/pyenchant-3.3.0.tar.gz",
+                    "sha256": "825288246b5debc9436f91967650974ef0d5636458502619e322c476f1283891"
                 }
             ]
         },
@@ -37,7 +49,6 @@
             "buildsystem": "simple",
             "build-commands": [
                 "install -Dm755 jackdaw.py /app/bin/jackdaw",
-                "install -Dm644 jackdaw.png /app/share/icons/hicolor/512x512/apps/io.github.dposto.Jackdaw.png",
                 "install -Dm644 icons/jackdaw-256.png /app/share/icons/hicolor/256x256/apps/io.github.dposto.Jackdaw.png",
                 "install -Dm644 icons/jackdaw-128.png /app/share/icons/hicolor/128x128/apps/io.github.dposto.Jackdaw.png",
                 "install -Dm644 io.github.dposto.Jackdaw.desktop /app/share/applications/io.github.dposto.Jackdaw.desktop",
@@ -47,7 +58,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/dposto/jackdaw.git",
-                    "tag": "v1.0.0"
+                    "branch": "main"
                 }
             ]
         }

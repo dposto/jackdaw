@@ -3058,6 +3058,9 @@ class MainWindow(QMainWindow):
 
         self.splitter.addWidget(left)
         self.splitter.addWidget(self.preview)
+        self.splitter.setChildrenCollapsible(False)
+        left.setMinimumWidth(300)
+        self.preview.setMinimumWidth(300)
         self.splitter.setSizes([720, 720])
         self.setCentralWidget(self.splitter)
 
