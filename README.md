@@ -21,16 +21,15 @@ A lightweight, VS Code-inspired HTML editor with live preview, built with PyQt6.
 ---
 
 ## Install
+
 **Flatpak (recommended):**
 
 Prerequisites — install Flatpak if you don't already have it:
 ```bash
 # Debian/Ubuntu
 sudo apt install flatpak flatpak-builder
-
 # Fedora
 sudo dnf install flatpak flatpak-builder
-
 # Arch
 sudo pacman -S flatpak flatpak-builder
 ```
@@ -62,13 +61,10 @@ Requires `python3-pyqt6` and `python3-pyqt6-webengine`.
 ```bash
 # Debian/Ubuntu
 sudo apt install python3-enchant aspell-en
-
-# Fedora:
+# Fedora
 sudo dnf install python3-enchant aspell-en
-
 # Arch
 sudo pacman -S python-pyenchant aspell aspell-en
-
 ```
 Spell check is bundled automatically in the Flatpak build.
 
