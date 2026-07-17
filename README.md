@@ -21,8 +21,28 @@ A lightweight, VS Code-inspired HTML editor with live preview, built with PyQt6.
 ---
 
 ## Install
-
 **Flatpak (recommended):**
+
+Prerequisites — install Flatpak if you don't already have it:
+```bash
+# Debian/Ubuntu
+sudo apt install flatpak flatpak-builder
+
+# Fedora
+sudo dnf install flatpak flatpak-builder
+
+# Arch
+sudo pacman -S flatpak flatpak-builder
+```
+(Other distros: see the [official Flatpak setup guide](https://flatpak.org/setup/).)
+
+Add the Flathub remote and install the KDE 6.9 SDK/Platform:
+```bash
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub org.kde.Sdk//6.9 org.kde.Platform//6.9 com.riverbankcomputing.PyQt.BaseApp//6.9
+```
+
+Build and run:
 ```bash
 git clone https://github.com/dposto/jackdaw.git
 cd jackdaw
@@ -36,13 +56,20 @@ git clone https://github.com/dposto/jackdaw.git
 cd jackdaw
 python3 jackdaw.py
 ```
-
 Requires `python3-pyqt6` and `python3-pyqt6-webengine`.
 
 **Optional (spell check, non-Flatpak only):**
+Arch:
+```bash
+sudo pacman -S python-pyenchant aspell aspell-en
 ```
-Arch:          sudo pacman -S python-pyenchant aspell aspell-en
-Debian/Ubuntu: sudo apt install python3-enchant aspell-en
+Debian/Ubuntu:
+```bash
+sudo apt install python3-enchant aspell-en
+```
+Fedora:
+```bash
+sudo dnf install python3-enchant aspell-en
 ```
 Spell check is bundled automatically in the Flatpak build.
 
