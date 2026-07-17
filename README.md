@@ -59,17 +59,16 @@ python3 jackdaw.py
 Requires `python3-pyqt6` and `python3-pyqt6-webengine`.
 
 **Optional (spell check, non-Flatpak only):**
-Arch:
 ```bash
-sudo pacman -S python-pyenchant aspell aspell-en
-```
-Debian/Ubuntu:
-```bash
+# Debian/Ubuntu
 sudo apt install python3-enchant aspell-en
-```
-Fedora:
-```bash
+
+# Fedora:
 sudo dnf install python3-enchant aspell-en
+
+# Arch
+sudo pacman -S python-pyenchant aspell aspell-en
+
 ```
 Spell check is bundled automatically in the Flatpak build.
 
